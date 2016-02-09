@@ -12,14 +12,16 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.get("/", (req, res)=>
 {
-	 res.sendfile(__dirname + '/public/index.html');
+	 // res.sendfile('public/index.html').end();
+	 res.send("hay");
+	 res.end();
 });
 
 //catch all
-app.get("/*", (req, res)=>
-{
-	res.status(200).send("<h1>Oops! The page you requested can't be found, try refreshing entering it again!")
-})
+// app.get("/*", (req, res)=>
+// {
+// 	res.status(200)
+// })
 
 //listen for requests
 app.listen(PORT, ()=>

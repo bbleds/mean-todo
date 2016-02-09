@@ -2,8 +2,26 @@
 <html>
 <head>
 	<title>My Awesome Index File</title>
+	<link rel="stylesheet" type="text/css" href="./vendor/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body>
-	<h1>Welcome to my awesome MEAN STACK app</h1>
+<body ng-app="todo-app">
+
+	<!-- all views rendered below -->
+	<div ui-view>
+	</div>
+
+
+
+ <!-- bootstrap js dependencies -->
+	<script src="./vendor/jquery/dist/jquery.min.js"></script>
+	<script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+ <!-- angular & angular dependencies-->
+	<!-- angular and angular ui -->
+	<script src="./vendor/angular/angular.min.js"></script>
+	<script src="./vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<!-- main app -->
+	<script src="./javascripts/app.js"></script>
+
 </body>
 </html>
