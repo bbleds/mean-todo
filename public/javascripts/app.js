@@ -2,8 +2,8 @@
 
 var app = angular.module('todo-app', ['ui.router']);
 
+//configure routes
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-	//configure routes
 	$stateProvider.state('todos', {
 		url: '/',
 		templateUrl: 'html-partials/todos.html'
@@ -16,7 +16,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 	// $locationProvider.html5Mode(true);
 });
 
-app.controller('test-ctrl', function () {
+app.controller('todos-ctrl', function () {
 	var self = this;
 	this.bruh = "bruh";
+	this.giveItUp = function (value) {
+		console.log("value is", value);
+	};
+
+	self.tasks = [{
+		title: "mow the flippers"
+	}, {
+		title: "Run the vagabonds"
+	}];
 });

@@ -18,10 +18,11 @@ app.get("/", (req, res)=>
 });
 
 //catch all
-// app.get("/*", (req, res)=>
-// {
-// 	res.status(200)
-// })
+app.get("/*", (req, res)=>
+{
+	res.status(404).send("These arent the droids(pages) you're lookin for! Check the url and try again");
+	res.end();
+})
 
 //listen for requests
 app.listen(PORT, ()=>

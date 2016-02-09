@@ -17,8 +17,22 @@ const app = angular.module('todo-app',['ui.router']);
 	});
 
 
-app.controller('test-ctrl',function()
+app.controller('todos-ctrl',function()
 {
 	const self = this;
 	this.bruh = "bruh";
+	this.giveItUp = (value)=>
+	{
+		console.log("value is", value);
+	}
+
+	self.tasks = [
+	{
+		title: "mow the flippers"
+	},
+	{
+		title: "Run the vagabonds"
+	}
+	]
+
 });
