@@ -16,16 +16,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 	// $locationProvider.html5Mode(true);
 });
 
-app.controller('todos-ctrl', function () {
+app.controller('todos-ctrl', ['$http', function ($http) {
 	var self = this;
-	this.bruh = "bruh";
-	this.giveItUp = function (value) {
-		console.log("value is", value);
-	};
 
-	self.tasks = [{
-		title: "mow the flippers"
-	}, {
-		title: "Run the vagabonds"
-	}];
-});
+	//get todo list data
+	$http.get("/api/tasks").then(function (response) {
+		self.tasks = response.data;
+	});
+}]);

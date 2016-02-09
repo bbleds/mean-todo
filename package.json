@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/bbleds/mean-todo#readme",
   "dependencies": {
+    "body-parser": "^1.14.2",
     "express": "^4.13.4",
+    "mongojs": "^2.3.0",
     "path": "^0.12.7"
   },
   "devDependencies": {

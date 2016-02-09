@@ -17,22 +17,14 @@ const app = angular.module('todo-app',['ui.router']);
 	});
 
 
-app.controller('todos-ctrl',function()
+app.controller('todos-ctrl', ['$http', function($http)
 {
 	const self = this;
-	this.bruh = "bruh";
-	this.giveItUp = (value)=>
-	{
-		console.log("value is", value);
-	}
 
-	self.tasks = [
+	//get todo list data
+	$http.get("/api/tasks").then((response)=>
 	{
-		title: "mow the flippers"
-	},
-	{
-		title: "Run the vagabonds"
-	}
-	]
+		self.tasks = response.data;
+	});
 
-});
+}]);
