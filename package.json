@@ -1,0 +1,29 @@
+{
+  "name": "mean-todo",
+  "version": "1.0.0",
+  "description": "A single page todo list app with MEAN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bower": "bower"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbleds/mean-todo.git"
+  },
+  "keywords": [],
+  "author": "Benjamin Bledsoe <bledsoedesigns@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bbleds/mean-todo/issues"
+  },
+  "homepage": "https://github.com/bbleds/mean-todo#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "gulp": "^3.9.1",
+    "nodemon": "^1.8.1"
+  }
+}
