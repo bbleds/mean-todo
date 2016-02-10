@@ -29,15 +29,20 @@ app.controller('todos-ctrl', ['$http', function($http)
 	const self = this;
 
 	//get todo list data
-	$http.get("/api/tasks").then((response)=>
-	{
-		self.tasks = response.data;
-	});
-
+		$http.get("/api/tasks").then((response)=>
+		{
+			self.tasks = response.data;
+		});
 	//get member data
-	$http.get("/api/members").then((response)=>
+		$http.get("/api/members").then((response)=>
+		{
+			self.members = response.data;
+		});
+
+	//Add Task
+	self.addTask = (value) =>
 	{
-		self.members = response.data;
-	});
+		console.log("task ", value);
+	}
 
 }]);

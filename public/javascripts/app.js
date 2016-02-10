@@ -30,9 +30,13 @@ app.controller('todos-ctrl', ['$http', function ($http) {
 	$http.get("/api/tasks").then(function (response) {
 		self.tasks = response.data;
 	});
-
 	//get member data
 	$http.get("/api/members").then(function (response) {
 		self.members = response.data;
 	});
+
+	//Add Task
+	self.addTask = function (value) {
+		console.log("task ", value);
+	};
 }]);

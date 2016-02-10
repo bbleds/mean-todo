@@ -1,6 +1,4 @@
 <div ng-controller="todos-ctrl as todos">
-	<input class="form-input" placholder="Task" ng-model="todos.taskOne"/>
-	<button class="btn btn-primary" ng-click="todos.giveItUp(todos.taskOne)">Submit it</button>
 
 	<div id="main_manager" class="container-fluid">
 	  <div class="row">
@@ -13,6 +11,8 @@
 			</div>
 			<div class="col-md-4">
 				<h1> Tasks</h1>
+			<input class="form-input" placholder="Add Task" ng-model="todos.singleTask"/>
+			<button class="btn btn-primary" ng-click="todos.addTask(todos.singleTask)">Add</button>
 				<div ng-repeat="task in todos.tasks">
 					<o>{{task.title}}</p>
 				</div>
