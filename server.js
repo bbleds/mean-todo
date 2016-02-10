@@ -46,6 +46,21 @@ app.get("/api/members", (req, res)=>
 	})
 });
 
+//api route for ading tasks
+app.post("/api/tasks", (req, res)=>
+{
+	console.log("I received a post request");
+	console.log("req ", req.body);
+	db.collection("todos").insert(req.body,function(err,doc){
+
+			//in addition to posting, send data back to ctrlr on callback
+			res.json(doc);
+	});
+
+});
+
+
+
 //catch all
 app.get("/*", (req, res)=>
 {

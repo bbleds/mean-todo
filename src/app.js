@@ -42,7 +42,14 @@ app.controller('todos-ctrl', ['$http', function($http)
 	//Add Task
 	self.addTask = (value) =>
 	{
-		console.log("task ", value);
+		let data = {};
+		data.title = value;
+		$http.post("/api/tasks", data).success((response)=>
+		{
+			//if successful, add to array and clear out input
+			self.tasks.push(response);
+			self.singleTask = "";
+		});
 	}
 
 }]);
