@@ -8,7 +8,7 @@
 			<input class="form-input" placholder="Add Member" ng-model="todos.singleMember"/>
 			<button class="btn btn-primary" ng-click="todos.addMember(todos.singleMember)">Add</button>
 				<div ng-repeat="member in todos.members">
-					<p>{{member.name}}</p>
+					<p>{{member.name}} <button class="btn">Remove</button></p>
 				</div>
 			</div>
 			<div class="col-md-4">
