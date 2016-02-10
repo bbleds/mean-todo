@@ -6,7 +6,14 @@ const app = angular.module('todo-app',['ui.router']);
 		$stateProvider
 			.state('todos', {
 				url: '/',
-				templateUrl: 'html-partials/todos.html'
+				views: {
+		        nav: {
+		          templateUrl: 'html-partials/navbar.html'
+		        },
+		        content: {
+		          templateUrl: 'html-partials/todos.html'
+		        }
+			 }
 			});
 
 			//if we load in erroneous route, go  back to base/catch-all route
@@ -25,6 +32,12 @@ app.controller('todos-ctrl', ['$http', function($http)
 	$http.get("/api/tasks").then((response)=>
 	{
 		self.tasks = response.data;
+	});
+
+	//get member data
+	$http.get("/api/members").then((response)=>
+	{
+		self.members = response.data;
 	});
 
 }]);

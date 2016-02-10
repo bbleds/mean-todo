@@ -2,7 +2,26 @@
 	<input class="form-input" placholder="Task" ng-model="todos.taskOne"/>
 	<button class="btn btn-primary" ng-click="todos.giveItUp(todos.taskOne)">Submit it</button>
 
-	<ul ng-repeat="task in todos.tasks">
-		<li>{{task.title}}</li>
-	</ul>
+	<div id="main_manager" class="container-fluid">
+	  <div class="row">
+	  	<!-- members -->
+			<div class="col-md-4">
+				<h1> Members</h1>
+				<div ng-repeat="member in todos.members">
+					<p>{{member.name}}</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h1> Tasks</h1>
+				<div ng-repeat="task in todos.tasks">
+					<o>{{task.title}}</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h1>Completed</h1>
+			</div>
+	  </div>
+	</div>
+
+
 </div>

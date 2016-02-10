@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 const path = require("path");
  // connecting with mongo
 	const mongojs = require("mongojs");
-	const db = mongojs("todoList", ['todos']);
+	const db = mongojs("todoList");
 	const bodyParser = require("body-parser");
 
 
@@ -30,11 +30,20 @@ app.get("/api/tasks", (req, res)=>
 	console.log("I received a get request");
 	//have server interact with mongo, find data from contactList db and collection
 		//docs means it will respond with the documents from db (e.g. the contacts)
-	db.todos.find(function(err,todos){
+	db.collection("todos").find(function(err,todos){
 		res.send(todos);
 	})
+});
 
-	// res.end();
+//api route for getting members
+app.get("/api/members", (req, res)=>
+{
+	console.log("I received a get request");
+	//have server interact with mongo, find data from contactList db and collection
+		//docs means it will respond with the documents from db (e.g. the contacts)
+	db.collection("members").find(function(err,members){
+		res.send(members);
+	})
 });
 
 //catch all
