@@ -5,6 +5,8 @@
 	  	<!-- members -->
 			<div class="col-md-4">
 				<h1> Members</h1>
+			<input class="form-input" placholder="Add Member" ng-model="todos.singleMember"/>
+			<button class="btn btn-primary" ng-click="todos.addMember(todos.singleMember)">Add</button>
 				<div ng-repeat="member in todos.members">
 					<p>{{member.name}}</p>
 				</div>
@@ -14,7 +16,7 @@
 			<input class="form-input" placholder="Add Task" ng-model="todos.singleTask"/>
 			<button class="btn btn-primary" ng-click="todos.addTask(todos.singleTask)">Add</button>
 				<div ng-repeat="task in todos.tasks">
-					<o>{{task.title}}</p>
+					<p>{{task.title}}</p>
 				</div>
 			</div>
 			<div class="col-md-4">

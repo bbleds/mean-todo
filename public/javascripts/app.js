@@ -45,4 +45,14 @@ app.controller('todos-ctrl', ['$http', function ($http) {
 			self.singleTask = "";
 		});
 	};
+	//Add Members
+	self.addMember = function (value) {
+		var data = {};
+		data.name = value;
+		$http.post("/api/members", data).success(function (response) {
+			//if successful, add to array and clear out input
+			self.members.push(response);
+			self.singleMember = "";
+		});
+	};
 }]);

@@ -52,11 +52,20 @@ app.post("/api/tasks", (req, res)=>
 	console.log("I received a post request");
 	console.log("req ", req.body);
 	db.collection("todos").insert(req.body,function(err,doc){
-
 			//in addition to posting, send data back to ctrlr on callback
 			res.json(doc);
 	});
+});
 
+//api route for ading members
+app.post("/api/members", (req, res)=>
+{
+	console.log("I received a post request");
+	console.log("req ", req.body);
+	db.collection("members").insert(req.body,function(err,doc){
+			//in addition to posting, send data back to ctrlr on callback
+			res.json(doc);
+	});
 });
 
 
